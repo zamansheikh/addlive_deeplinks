@@ -1,0 +1,49 @@
+name: Deploy Deep Links Website to VPS
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Set up SSH
+        uses: webfactory/ssh-agent@v0.9.0
+        with:
+          ssh-private-key: ${{ secrets.SSH_PRIVATE_KEY }}
+
+      - name: Deploy to VPS
+        run: |
+          ssh -o StrictHostKeyChecking=no root@88.222.213.235 "
+            # Load nvm and use Node 24 (or ensure compatible version)
+            export NVM_DIR=\"\$HOME/.nvm\" &&
+            [ -s \"\$NVM_DIR/nvm.sh\" ] && . \"\$NVM_DIR/nvm.sh\" &&
+            nvm use 24 &&
+            
+            # Navigate to project directory (Assuming similar structure)
+            # Make sure this directory exists on the server first!
+            # mkdir -p ~/zhz/addlive_deeplinks
+            cd ~/zhz/addlive_deeplinks &&
+            
+            # Pull latest changes
+            git stash &&
+            git pull origin main &&
+            
+            # Install dependencies and build
+            npm install &&
+            npm run build &&
+            
+            # Restart tmux session
+            if tmux has-session -t addlive_deeplinks 2>/dev/null; then
+              echo \"Already session running: addlive_deeplinks. Killing it...\"
+              tmux kill-session -t addlive_deeplinks
+            fi &&
+            echo \"Starting new session: addlive_deeplinks\" &&
+            tmux new-session -d -s addlive_deeplinks 'source ~/.nvm/nvm.sh && nvm use 24 && npm start' &&
+            echo \"Successfully started 'npm start' in tmux session addlive_deeplinks\"
+          "
