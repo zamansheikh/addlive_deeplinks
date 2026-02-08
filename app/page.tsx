@@ -3,9 +3,10 @@ import Image from 'next/image';
 
 // Sample Data
 const sampleUsers = [
-  { id: '100005', name: 'Zaman Sheikh', avatar: 'https://i.pravatar.cc/150?u=100005' },
-  { id: '100006', name: 'Sarah Connor', avatar: 'https://i.pravatar.cc/150?u=100006' },
-  { id: '100007', name: 'John Doe', avatar: 'https://i.pravatar.cc/150?u=100007' },
+  { id: '68e7d830efe28c18be990137', name: 'Zaman Sheikh', avatar: 'https://i.pravatar.cc/150?u=100005' },
+  { id: '68e7a8bc3fe8a330c1ec65c8', name: 'Sarah Connor', avatar: 'https://i.pravatar.cc/150?u=100006' },
+  { id: '68e7c0b0c8b545ae23f35240', name: 'John Doe', avatar: 'https://i.pravatar.cc/150?u=100007' },
+  { id: '68e7f97fefe28c18be99039b', name: 'Mystery Guest', avatar: 'https://i.pravatar.cc/150?u=100008' },
 ];
 
 const sampleRooms = [
