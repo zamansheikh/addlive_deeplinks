@@ -1,0 +1,14 @@
+[
+    {
+        "relation": [
+            "delegate_permission/common.handle_all_urls"
+        ],
+        "target": {
+            "namespace": "android_app",
+            "package_name": "com.adda.adda",
+            "sha256_cert_fingerprints": [
+                "6C:B3:6E:6D:20:DB:E0:AC:D9:00:5C:A9:01:4D:8F:A7:6F:BD:FB:B6:A2:D6:96:18:D2:A4:93:9E:D3:02:99:17"
+            ]
+        }
+    }
+]
