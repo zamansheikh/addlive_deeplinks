@@ -110,6 +110,55 @@ export default function Home() {
             </div>
           </div>
         </div>
+
+        {/* Legal & Docs Footer */}
+        <div className="mt-16 bg-gray-100 p-8 rounded-2xl">
+          <h3 className="text-lg font-semibold text-gray-800 text-center mb-6">Legal & Documentation</h3>
+          <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
+            <Link
+              href="/privacy"
+              className="block p-4 bg-white rounded-lg hover:bg-pink-50 hover:border-pink-300 border border-gray-200 transition-colors text-center"
+            >
+              <div className="font-semibold text-gray-900 text-sm">Privacy Policy</div>
+              <div className="text-xs text-gray-500 mt-1">Data protection & privacy</div>
+            </Link>
+            <Link
+              href="/terms"
+              className="block p-4 bg-white rounded-lg hover:bg-pink-50 hover:border-pink-300 border border-gray-200 transition-colors text-center"
+            >
+              <div className="font-semibold text-gray-900 text-sm">Terms of Service</div>
+              <div className="text-xs text-gray-500 mt-1">Usage rules & conditions</div>
+            </Link>
+            <Link
+              href="/refund"
+              className="block p-4 bg-white rounded-lg hover:bg-pink-50 hover:border-pink-300 border border-gray-200 transition-colors text-center"
+            >
+              <div className="font-semibold text-gray-900 text-sm">Refund Policy</div>
+              <div className="text-xs text-gray-500 mt-1">Refund & cancellation</div>
+            </Link>
+            <Link
+              href="/delete-account"
+              className="block p-4 bg-white rounded-lg hover:bg-pink-50 hover:border-pink-300 border border-gray-200 transition-colors text-center"
+            >
+              <div className="font-semibold text-gray-900 text-sm">Delete Account</div>
+              <div className="text-xs text-gray-500 mt-1">Account deletion guide</div>
+            </Link>
+            <Link
+              href="/contact"
+              className="block p-4 bg-white rounded-lg hover:bg-pink-50 hover:border-pink-300 border border-gray-200 transition-colors text-center"
+            >
+              <div className="font-semibold text-gray-900 text-sm">Contact Us</div>
+              <div className="text-xs text-gray-500 mt-1">Support & inquiries</div>
+            </Link>
+            <Link
+              href="/about"
+              className="block p-4 bg-white rounded-lg hover:bg-pink-50 hover:border-pink-300 border border-gray-200 transition-colors text-center"
+            >
+              <div className="font-semibold text-gray-900 text-sm">About Us</div>
+              <div className="text-xs text-gray-500 mt-1">Our mission & story</div>
+            </Link>
+          </div>
+        </div>
       </div>
     </div>
   );
