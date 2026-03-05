@@ -44,10 +44,12 @@ export default function Home() {
               {sampleUsers.map((user) => (
                 <div key={user.id} className="flex items-center justify-between p-4 bg-gray-50 rounded-xl hover:bg-blue-50 transition-colors border border-gray-100">
                   <div className="flex items-center space-x-4">
-                    <img
+                    <Image
                       src={user.avatar}
                       alt={user.name}
-                      className="w-12 h-12 rounded-full border-2 border-white shadow-sm"
+                      width={48}
+                      height={48}
+                      className="rounded-full border-2 border-white shadow-sm"
                     />
                     <div>
                       <p className="font-semibold text-gray-900">{user.name}</p>
@@ -106,7 +108,7 @@ export default function Home() {
             </div>
             <div className="p-4 bg-gray-50 rounded-lg">
               <div className="font-bold text-gray-900 mb-2">3. Fallback</div>
-              If app doesn't open within 2.5s, redirects to Play Store.
+              If app doesn&apos;t open within 2.5s, redirects to Play Store.
             </div>
           </div>
         </div>
@@ -128,6 +130,13 @@ export default function Home() {
             >
               <div className="font-semibold text-gray-900 text-sm">Terms of Service</div>
               <div className="text-xs text-gray-500 mt-1">Usage rules & conditions</div>
+            </Link>
+            <Link
+              href="/child-safety"
+              className="block p-4 bg-white rounded-lg hover:bg-pink-50 hover:border-pink-300 border border-gray-200 transition-colors text-center"
+            >
+              <div className="font-semibold text-gray-900 text-sm">Child Safety</div>
+              <div className="text-xs text-gray-500 mt-1">CSAE prevention & standards</div>
             </Link>
             <Link
               href="/refund"
